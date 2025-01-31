@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious URL Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4e8a8a, #f3f7f9); /* Vibrant gradient background */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .content-wrapper {
+            background: linear-gradient(135deg, #ffffff, #f9fafb); /* Subtle card gradient */
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Prominent shadow for focus */
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Header Styling */
+        .header {
+            font-size: 32px;
+            font-weight: 600;
+            color: #2c3e50; /* Strong dark blue-gray for the title */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subheading {
+            font-size: 16px;
+            color: #7f8c8d; /* Subtle gray for subheading */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Form Styling */
+        label {
+            font-size: 14px;
+            color: #4e8a8a; /* Consistent teal tone for labels */
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd; /* Neutral border */
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #f5f7fa; /* Soft background */
+            color: #333;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            background-color: #ffffff;
+            border-color: #4e8a8a; /* Teal focus border */
+            box-shadow: 0 0 8px rgba(78, 138, 138, 0.3); /* Gentle focus glow */
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #4e8a8a, #2c3e50); /* Gradient button */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2); /* Dynamic shadow */
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #3e7272, #1e2a35); /* Darker gradient on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d; /* Subtle gray text */
+            text-align: center;
+        }
+
+        .footer a {
+            color: #4e8a8a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Additional Styling for Professional Look */
+        .circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(78, 138, 138, 0.2);
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .circle1 {
+            top: 10%;
+            left: 15%;
+        }
+
+        .circle2 {
+            bottom: 5%;
+            right: 10%;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="content-wrapper">
+        <div class="header">Malicious URL Detection</div>
+        <div class="subheading">Check if a URL is safe</div>
+        <form action="/predict" method="post">
+            <label for="url">Enter URL:</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+            <button type="submit">Analyze URL</button>
+        </form>
+        <div class="footer">
+            <p>Need help? <a href="/help">Contact Support</a></p>
+        </div>
+    </div>
+</body>
+</html>
