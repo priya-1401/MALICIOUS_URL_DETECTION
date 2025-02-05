@@ -5,7 +5,8 @@
       "src": "app.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.10"
+        "runtime": "python3.10",
+        "maxLambdaSize": "50mb"
       }
     }
   ],
@@ -16,6 +17,7 @@
     }
   ],
   "env": {
-    "PYTHON_VERSION": "3.10"
+    "PIP_NO_CACHE_DIR": "off",
+    "PIP_LOG_LEVEL": "ERROR"
   }
 }
