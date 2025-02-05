@@ -30,11 +30,6 @@ def abnormal_url(url):
         return 1
     else:
         return 0
-from googlesearch import search
-def google_index(url):
-    site = search(url, 5)
-    return 1 if site else 0
-
 def count_dot(url):
     count_dot = url.count('.')
     return count_dot
