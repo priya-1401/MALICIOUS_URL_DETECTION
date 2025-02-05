@@ -174,7 +174,7 @@ import os
 import logging
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.ERROR)  # Suppress debug/info logs
+    logging.basicConfig(level=logging.CRITICAL)  # Only log critical errors
     port = int(os.environ.get("PORT", 30000))
     app.run(host="0.0.0.0", port=port, debug=False)
 
