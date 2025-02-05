@@ -176,6 +176,10 @@ def predict():
 
 import os
 
+import logging
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 30000))  # Use Render's assigned port
-    app.run(host="0.0.0.0", port=port)
+    logging.basicConfig(level=logging.ERROR)  # Suppress debug/info logs
+    port = int(os.environ.get("PORT", 30000))
+    app.run(host="0.0.0.0", port=port, debug=False)
+
